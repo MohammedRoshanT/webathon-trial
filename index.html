@@ -3,69 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EchoSphere – Speak Smarter</title>
+    <title>The Rational Decision Wheel</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <main class="container">
-        <header class="main-header">
-            <h1>EchoSphere</h1>
-            <p class="tagline">See your confidence. Hear your growth.</p>
-        </header>
-
-        <div id="app">
-            
-            <div id="visualizer">
-                <div id="bar-visualizer"></div>
-                <div class="sound-ring" id="ring-outer"></div>
-                <div class="sound-ring" id="ring-middle"></div>
-                <div class="sound-ring" id="ring-inner"></div>
-                <div id="status-indicator" aria-label="Listening status"></div>
-            </div>
-
-            <div id="dashboard">
-                <div class="stat-box">
-                    <span id="wpm-value">0</span>
-                    <label>Words / Min</label>
-                </div>
-                <div class="stat-box">
-                    <span id="pauses-value">0</span>
-                    <label>Pauses</label>
-                </div>
-                <div class="stat-box confidence">
-                    <span id="confidence-value">0</span>
-                    <label>Confidence %</label>
-                </div>
-            </div>
-
-            <div id="controls">
-                <button id="toggle-speech-btn">Start Speaking</button>
-            </div>
-
+    <div class="app-container">
+        <h1>The Rational Decision Wheel</h1>
+        
+        <div class="add-option-form">
+            <input type="text" id="option-input" placeholder="Enter a new option (e.g., 'Pizza')">
+            <button id="add-option-btn">Add Option</button>
         </div>
-    </main>
 
-    <div id="report-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <h2>Session Report</h2>
-            <div class="report-grid">
-                <p>Total Time:</p>
-                <span id="report-time">0s</span>
-
-                <p>Average WPM:</p>
-                <span id="report-wpm">0</span>
-
-                <p>Total Pauses:</p>
-                <span id="report-pauses">0</span>
-
-                <p>Final Confidence:</p>
-                <span id="report-confidence">0%</span>
+        <div id="options-list" class="options-list-container">
             </div>
-            <button id="try-again-btn">Try Again</button>
+
+        <div class="wheel-container">
+            <div class="wheel-pointer"></div>
+            <div id="wheel"></div>
+            <button id="spin-button">DECIDE!</button>
+        </div>
+
+    </div>
+
+    <div id="result-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <p>The wheel has decided:</p>
+            <h2 id="result-text"></h2>
         </div>
     </div>
 
